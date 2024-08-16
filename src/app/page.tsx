@@ -215,7 +215,7 @@ const App: React.FC = () => {
     try {
       // Post data to the server
       const response = await axios.post(
-        "https://waterinfopoc.azurewebsites.net/WaterInfolist",
+        "https://waterinfowebapp.azurewebsites.net/WaterInfolist",
         formattedData
       );
 
@@ -234,7 +234,7 @@ const App: React.FC = () => {
         const match = responseData.match(/Record Created : (\d+)/);
         if (match) {
           const id = match[1];
-          const downloadLink = `https://waterinfopoc.azurewebsites.net/getpdfoutput?id=${id}`;
+          const downloadLink = `https://waterinfowebapp.azurewebsites.net/getpdfoutput?id=${id}`;
 
           // Fetch the download link for the DOC file
           const downloadResponse = await axios.get(downloadLink);
